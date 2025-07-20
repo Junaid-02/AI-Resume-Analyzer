@@ -1,302 +1,158 @@
-<p><small>Best View in <a href="https://github.com/settings/appearance">Light Mode</a> and Desktop Site (Recommended)</small></p><br/>
+# AI Resume Analyzer
 
-![AI-Resume-Analyzer](https://socialify.git.ci/deepakpadhi986/AI-Resume-Analyzer/image?description=1&descriptionEditable=5th%20Sem%20Final%20Year%20Project%20at%20Kirti%20M%20Doongursee%20College%20(2022%20-%2023)&font=Raleway&language=1&pattern=Plus&theme=Light)
+## Overview
+AI Resume Analyzer is a Streamlit-based web application that allows users to upload their resumes (PDF), analyzes them using NLP, and provides personalized recommendations, skill analysis, and feedback. Admins can view analytics, and all data is saved to Excel sheets for easy access and reporting.
 
-<div align="center">
-  <h1>🌴 AI RESUME ANALYZER 🌴</h1>
-  <p>A Tool for Resume Analysis, Predictions and Recommendations</p>
-  <!-- Badges -->
-  <p>
-    <img src="https://img.shields.io/github/last-commit/deepakpadhi986/AI-Resume-Analyzer" alt="last update" />
-    <img src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103" alt="open source" />
-    <img src="https://img.shields.io/github/languages/top/deepakpadhi986/AI-Resume-Analyzer?color=red" alt="language" />
-    <img src="https://img.shields.io/github/languages/code-size/deepakpadhi986/AI-Resume-Analyzer?color=informational" alt="code size" />
-    <a href="https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/LICENSE">
-      <img src="https://img.shields.io/github/license/deepakpadhi986/AI-Resume-Analyzer.svg?color=yellow" alt="license" />
-    </a>
-  </p>
-  
-  <!--links-->
-  <h4>
-    <a href="#preview-">View Demo</a>
-    <span> · </span>
-    <a href="#setup--installation-">Installation</a>
-    <span> · </span>
-    <a href="mailto:dnoobnerd@gmail.com?subject=I%20Want%20The%20Project%20Report%20of%20AI-RESUME-ANALYZER%20(2022%20 %2023)&body=Here%20Are%20My%20Details%20%F0%9F%98%89%0D%0A%0D%0AOrganization%2FCollege%20Name%3A%20%0D%0A%0D%0AFull%20Name%3A%20%0D%0A%0D%0AGitHub%20Profile%20%3A%20%0D%0A%0D%0AFrom%20where%20did%20you%20get%20to%20know%20about%20this%20project%3A%0D%0A%0D%0APurpose%20of%20asking%20project%20report%20(describe)%3A%0D%0A%0D%0A%0D%0AIf%20the%20above%20information%20satisfy%20your%20identity%20you%20will%20get%20the%20report%20to%20your%20email.">Project Report</a>
-  </h4>
-  <p>
-    <small align="justify">
-      Built with 🤍 by 
-      <a href="https://dnoobnerd.netlify.app/">Deepak Padhi</a> through 
-      <a href="https://www.linkedin.com/in/mrbriit/">Dr Bright --(Data Scientist)</a>
-     </small>
-  </p>
-  <small align="justify">🚀 A Project Submitted for the partial fulfilment of the degree B.sc CS at 
-    <a href="https://kirticollege.edu.in/">Kirti College</a> during academic year 2022-23
-  </small>
-</div><br/><br/>
+## Features
+- Upload and analyze resumes (PDF)
+- Extracts name, email, degree, skills, and more
+- Provides skill recommendations and resume tips
+- Feedback form for user ratings and comments
+- Admin dashboard for user and feedback analytics
+- All data saved to Excel (`User_Data.xlsx`) in separate sheets
+- Modern, classic UI with clear, accessible design
 
-## About the Project 🥱
-<div align="center">
-    <br/><img src="https://raw.githubusercontent.com/deepakpadhi986/AI-Resume-Analyzer/main/screenshots/RESUME.png" alt="screenshot" /><br/><br/>
-    <p align="justify"> 
-      A tool which parses information from a resume using natural language processing and finds the keywords, cluster them onto sectors based on their keywords. 
-      And lastly show recommendations, predictions, analytics to the applicant / recruiter based on keyword matching.
-    </p>
-</div>
+## Technologies Used
+- Python 3.8+
+- Streamlit
+- pandas
+- openpyxl
+- pyresparser (NLP resume parsing)
+- plotly (charts)
+- gspread/pygsheets (optional, for Google Sheets integration)
 
-## Scope 😲
-i. It can be used for getting all the resume data into a structured tabular format and csv as well, so that the organization can use those data for analytics purposes
+## Setup Instructions
+1. **Clone the repository**
+   ```bash
+   git clone <repo-url>
+   cd AI-Resume-Analyzer
+   ```
+2. **Install Python dependencies**
+   ```bash
+   pip install -r App/requirements.txt
+   pip install openpyxl
+   # For Google Sheets integration (optional):
+   pip install gspread oauth2client
+   ```
+3. **Download spaCy model**
+   ```bash
+   python -m spacy download en_core_web_sm
+   ```
+4. **(Optional) Google Sheets Setup**
+   - Follow the [gspread docs](https://gspread.readthedocs.io/en/latest/oauth2.html) to set up Google API credentials if you want to save data to Google Sheets.
 
-ii. By providing recommendations, predictions and overall score user can improve their resume and can keep on testing it on our tool
-
-iii. And it can increase more traffic to our tool because of user section
-
-iv. It can be used by colleges to get insight of students and their resume before placements
-
-v. Also, to get analytics for roles which users are mostly looking for
-
-vi. To improve this tool by getting feedbacks
-
-<!-- TechStack -->
-## Tech Stack 🍻
-<details>
-  <summary>Frontend</summary>
-  <ul>
-    <li><a href="https://streamlit.io/">Streamlit</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML">HTML</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript">JavaScript</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Backend</summary>
-  <ul>
-    <li><a href="https://streamlit.io/">Streamlit</a></li>
-    <li><a href="https://www.python.org/">Python</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.mysql.com/">MySQL</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Modules</summary>
-  <ul>
-    <li><a href="https://pandas.pydata.org/">pandas</a></li>
-    <li><a href="https://github.com/OmkarPathak/pyresparser">pyresparser</a></li>
-    <li><a href="https://pypi.org/project/pdfminer3/">pdfminer3</a></li>
-    <li><a href="https://plotly.com/">Plotly</a></li>
-    <li><a href="https://www.nltk.org/">NLTK</a></li>
-  </ul>
-</details>
-
-<!-- Features -->
-## Features 🤦‍♂️
-### Client: -
-- Fetching Location and Miscellaneous Data
-
-  Using Parsing Techniques to fetch
-- Basic Info
-- Skills
-- Keywords
-
-Using logical programs, it will recommend
-- Skills that can be added
-- Predicted job role
-- Course and certificates
-- Resume tips and ideas
-- Overall Score
-- Interview & Resume tip videos
-
-### Admin: -
-- Get all applicant’s data into tabular format
-- Download user’s data into csv file
-- View all saved uploaded pdf in Uploaded Resume folder
-- Get user feedback and ratings
-  
-  Pie Charts for: -
-- Ratings
-- Predicted field / roles
-- Experience level
-- Resume score
-- User count
-- City
-- State
-- Country
-
-### Feedback: -
-- Form filling
-- Rating from 1 – 5
-- Show overall ratings pie chart
-- Past user comments history 
-
-## Requirements 😅
-### Have these things installed to make your process smooth 
-1) Python (3.9.12) https://www.python.org/downloads/release/python-3912/
-2) MySQL https://www.mysql.com/downloads/
-3) Visual Studio Code **(Prefered Code Editor)** https://code.visualstudio.com/Download
-4) Visual Studio build tools for C++ https://aka.ms/vs/17/release/vs_BuildTools.exe
-
-## Setup & Installation 👀
-
-To run this project, perform the following tasks 😨
-
-Download the code file manually or via git
+## How to Run the App
 ```bash
-git clone https://github.com/deepakpadhi986/AI-Resume-Analyzer.git
+streamlit run App/App.py
 ```
+- The app will open in your browser at [http://localhost:8501](http://localhost:8501)
 
-Create a virtual environment and activate it **(recommended)**
+## Data Storage
+- **Resume data** is saved to `User_Data.xlsx` in **Sheet1**
+- **Feedback data** is saved to `User_Data.xlsx` in **Sheet2**
+- The Excel file is created/updated automatically in your project directory
+- Make sure to close the Excel file before submitting new data to avoid permission errors
 
-Open your command prompt and change your project directory to ```AI-Resume-Analyzer``` and run the following command 
-```bash
-python -m venv venvapp
+## Customization
+- To change the UI colors, edit the CSS blocks in `App/App.py`
+- To add/remove fields saved to Excel, update the `resume_save_data` and `feedback_save_data` dictionaries
+- To use Google Sheets instead of Excel, replace the `save_to_excel` function with a gspread-based function
 
-cd venvapp/Scripts
+## Screenshots
 
-activate
+### Main UI and Upload
+![Main UI and Upload: Shows the homepage with upload form and sidebar.](screenshots/screenshot1.png)
 
-```
+### Resume Preview and Basic Info
+![Resume Preview and Basic Info: Shows resume PDF preview and extracted info.](screenshots/screenshot2.png)
 
-Downloading packages from ```requirements.txt``` inside ``App`` folder
-```bash
-cd../..
+### Skills Recommendation and Resume Tips
+![Skills Recommendation and Resume Tips: Shows skills analysis and resume tips.](screenshots/screenshot3.png)
 
-cd App
+### Bonus Video for Resume Writing Tips
+![Resume Writing Video: Shows embedded YouTube video for resume tips.](screenshots/screenshot4.png)
 
-pip install -r requirements.txt
+### Bonus Video for Interview Tips
+![Interview Tips Video: Shows embedded YouTube video for interview tips.](screenshots/screenshot5.png)
 
-python -m spacy download en_core_web_sm
+### Feedback Form
+![Feedback Form: Shows the feedback form UI.](screenshots/feedback_form.png)
 
-```
+### About the Project
+![About the Project: Shows the About section UI.](screenshots/about_section.png)
 
-After installation is finished create a Database ```cv```
+### Admin Side UI
+![Admin Side UI: Shows the admin login and dashboard.](screenshots/admin_side.png)
 
-And change user credentials inside ```App.py```
-https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/17e1cdb207fef62557dc394f4158bda515e541fd/App/App.py#L95
+### Excel Data Storage (Sheet1)
+![Excel Data Storage (Sheet1): Shows resume data saved in the Excel file.](screenshots/excel_sheet.png)
 
-Go to ```venvapp\Lib\site-packages\pyresparser``` folder
+## Accessibility
 
-And replace the ```resume_parser.py``` with ```resume_parser.py``` 
+- The app uses high-contrast colors, readable fonts, and clear icons for all status messages.
+- All interactive elements (buttons, inputs, dropdowns) are clearly visible and accessible.
+- All screenshots in this README include alt text for screen readers.
+- For further accessibility improvements, consider:
+  - Using even larger font sizes for visually impaired users
+  - Testing with a screen reader
+  - Ensuring all color indicators are also represented by icons or text
 
-which was provided by me inside ```pyresparser``` folder
+## Credits
+- Developed by **Mohammed Junaid**
+- Resume parsing powered by [pyresparser](https://github.com/OmkarPathak/pyresparser)
+- UI built with [Streamlit](https://streamlit.io/)
 
-``Congratulations 🥳😱 your set-up 👆 and installation is finished 😵🤯``
+## Known Issues / Troubleshooting
 
-I hope that your ``venvapp`` is activated and working directory is inside ``App``
+- **Excel Permission Error:**
+  - If you see a 'Permission denied' error when saving to Excel, make sure the file is closed in Excel or any other program before submitting data.
+- **Missing Dependencies:**
+  - If you see errors about missing modules (e.g., openpyxl, pandas), install them with `pip install -r App/requirements.txt` and `pip install openpyxl`.
+- **Large Excel Files:**
+  - The admin dashboard paginates data for performance. If the file grows very large, consider archiving old data.
+- **Resume Parsing Issues:**
+  - If resume parsing fails, check that the PDF is not corrupted and is a standard, text-based PDF (not just scanned images).
+- **Google Sheets Integration:**
+  - Not enabled by default. See README for setup if you want to use it.
 
-Run the ```App.py``` file using
-```bash
-streamlit run App.py
+## Contributing
 
-```
+Contributions are welcome! To contribute:
 
-## Known Error 🤪
-If ``GeocoderUnavailable`` error comes up then just check your internet connection and network speed
+1. **Fork the repository**
+2. **Create a new branch** for your feature or bugfix
+3. **Make your changes** (follow PEP8/code style)
+4. **Commit and push** to your fork
+5. **Open a Pull Request** describing your changes
 
-## Issue While Installation and Set-up 🤧
-Check-out installation [Video](https://youtu.be/WFruijLC1Nc)
+For major changes, please open an issue first to discuss what you’d like to change.
 
-Feel Free to <a href="mailto:dnoobnerd@gmail.com?subject=I%20have%20an%20issue%20while%20setup%2Finstalling%20of%20AI%20RESUME%20ANALYZER&body=Name%3A%20-%0D%0A%0D%0ADesignation%3A%20-%0D%0A%0D%0APlease%20describe%20your%20problem%20in%20brief%20with%20attached%20photos%20of%20error">Send mail</a>
+---
 
-## Usage
-- After the setup it will do stuff's automatically
-- You just need to upload a resume and see it's magic
-- Try first with my resume uploaded in ``Uploaded_Resumes`` folder
-- Admin userid is ``admin`` and password is ``admin@resume-analyzer``
+## Contact
+For questions, suggestions, or contributions:
+- [LinkedIn: Mohammed Junaid](https://www.linkedin.com/in/mohammed-junaid-dob25042004/)
+- Email: mjunaid3499@gmail.com 
 
-<!-- Roadmap -->
-## Roadmap 🛵
-* [x] Predict user experience level.
-* [x] Add resume scoring criteria for skills and projects.
-* [x] Added fields and recommendations for web, android, ios, data science.
-* [ ] Add more fields for other roles, and its recommendations respectively. 
-* [x] Fetch more details from users resume.
-* [ ] View individual user details.
+## Deployment
 
-## Contributing 🤘
-Pull requests are welcome. 
+### Local Deployment
+- Run the app locally with:
+  ```bash
+  streamlit run App/App.py
+  ```
+- Make sure all dependencies are installed and Excel files are not open during use.
 
-For major changes, please open an issue first to discuss what you would like to change.
+### Streamlit Cloud
+- You can deploy this app for free on [Streamlit Cloud](https://streamlit.io/cloud):
+  1. Push your code to a public GitHub repository.
+  2. Go to [Streamlit Cloud](https://streamlit.io/cloud) and connect your repo.
+  3. Set the main file path to `App/App.py`.
+  4. Add any required secrets (for Google Sheets, etc.) in the Streamlit Cloud settings.
+  5. Click Deploy!
 
-I've attached the <a href="https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/RESUME%20ANALYSER%20SYNOPSIS.pdf">synopsis</a> of the project
+### Other Options
+- You can also deploy on Heroku, AWS, Azure, or any server that supports Python and Streamlit.
+- For cloud deployment, make sure to handle file permissions and secrets securely.
 
-If you want the full report of project
-<a href="mailto:dnoobnerd@gmail.com?subject=I%20Want%20The%20Project%20Report%20of%20AI-RESUME-ANALYZER%20(2022%20-%2023)&body=Here%20Are%20My%20Details%20%F0%9F%98%89%0D%0A%0D%0AOrganization%2FCollege%20Name%3A%20%0D%0A%0D%0AFull%20Name%3A%20%0D%0A%0D%0AGitHub%20Profile%20%3A%20%0D%0A%0D%0AFrom%20where%20did%20you%20get%20to%20know%20about%20this%20project%3A%0D%0A%0D%0APurpose%20of%20asking%20project%20report%20(describe)%3A%0D%0A%0D%0A%0D%0AIf%20the%20above%20information%20satisfy%20your%20identity%20you%20will%20get%20the%20report%20to%20your%20email.">Email Me</a> ``it's FREE``
-
-## Acknowledgement 🤗
-- <a href="https://www.linkedin.com/in/mrbriit/">Dr Bright</a> - <a href="https://www.udemy.com/course/the-full-stack-data-scientist-bootcamp/">(The Full Stack Data Scientist BootCamp)</a>
-- <a href="https://www.academia.edu/32543544/Resume_Parser_with_Natural_Language_Processing">Resume Parser with Natural Language Processing</a>
-- <a href="https://github.com/OmkarPathak/pyresparser">pyresparser</a>
-
-## Preview 👽
-
-### Client Side
-
-**Main Screen**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/user/1-main-screen.png?raw=true)
-
-**Resume Analysis**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/user/2-analysis.jpg?raw=true)
-
-**Skill Recommendation**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/user/3-recom.png?raw=true)
-
-**Course Recommendation**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/user/4-recom.png?raw=true)
-
-**Tips and Overall Score**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/user/5-tipsscore.png?raw=true)
-
-**Video Recommendation**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/user/6-recom.png?raw=true)
-
-### Feedback
-
-**Feedback Form**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/feedback/1-form.png?raw=true)
-
-**Overall Rating Analysis and Comment History**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/feedback/2-analytics.png?raw=true)
-
-### Admin
-
-**Login**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/admin/1-main-screen.png?raw=true)
-
-**User Count and it's data**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/admin/2-user-data.png?raw=true)
-
-**Exported csv file**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/admin/3-user-datacsv.png?raw=true)
-
-**Feedback Data**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/admin/4-feed-data.png?raw=true)
-
-**Pie Chart Analytical Representation of clusters**
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/admin/5-pieexp.png?raw=true)
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/admin/6-piescre.jpg?raw=true)
-
-![Screenshot](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/admin/7-pielocation.png?raw=true)
-
-### Built with 🤍 AI RESUME ANALYZER by <a href="https://dnoobnerd.netlify.app/">Deepak Padhi</a>
+--- 
