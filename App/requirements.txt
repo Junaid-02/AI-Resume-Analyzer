@@ -8,3 +8,4 @@ plotly
 geopy
 Pillow
 streamlit-tags
+geocoder
